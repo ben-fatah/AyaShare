@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-// import 'package:quran/quran.dart' as quran;
+import 'package:quran/quran.dart' as quran;
 class MyAppState extends ChangeNotifier {
   // البيانات التي سنخزنها
   String _currentAyah = '';
@@ -11,13 +11,13 @@ class MyAppState extends ChangeNotifier {
   // دالة لإنشاء آية عشوائية
   void generateRandomAyah() {
     final random = Random();
-    // int surahNumber = random.nextInt(114) + 1;
-    // // int verseCount = quran.getVerseCount(surahNumber);
-    // // int verseNumber = random.nextInt(verseCount) + 1;
+    int surahNumber = random.nextInt(114) + 1;
+    int verseCount = quran.getVerseCount(surahNumber);
+    int verseNumber = random.nextInt(verseCount) + 1;
     
-    // // _currentAyah = quran.getVerse(surahNumber, verseNumber);
-    // // _currentSurahName = quran.getSurahNameArabic(surahNumber);
-    // _currentVerseNumber = verseNumber;
+    _currentAyah = quran.getVerse(surahNumber, verseNumber);
+    _currentSurahName = quran.getSurahNameArabic(surahNumber);
+    _currentVerseNumber = verseNumber;
     
     notifyListeners();
   }

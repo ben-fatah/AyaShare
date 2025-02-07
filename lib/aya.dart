@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
+
 
 class AyaCard extends StatelessWidget {
   final String ayahText;
@@ -28,12 +28,11 @@ class AyaCard extends StatelessWidget {
             // عنوان السورة
             Text(
               '$surahName - آية $verseNumber',
-              // style: GoogleFonts.amiri( // استخدام Google Fonts
-              //   textStyle: theme.textTheme.titleLarge!.copyWith(
-              //     color: theme.colorScheme.onPrimary,
-              //     fontSize: 24,
-              //   ),
-              // ),
+              style: theme.textTheme.titleLarge!.copyWith(
+                color: theme.colorScheme.onPrimary,
+                fontSize: 24,
+                fontFamily: 'Amiri', // Ensure you have the font asset added in pubspec.yaml
+              ),
               textAlign: TextAlign.center,
               textDirection: TextDirection.rtl,
             ),
@@ -41,12 +40,11 @@ class AyaCard extends StatelessWidget {
             // نص الآية
             Text(
               ayahText,
-              // style: GoogleFonts.amiri( // استخدام Google Fonts
-              //   textStyle: theme.textTheme.titleLarge!.copyWith(
-              //     color: theme.colorScheme.onPrimary,
-              //     fontSize: 24,
-              //   ),
-              // ),
+              style: theme.textTheme.titleLarge!.copyWith(
+                color: theme.colorScheme.onPrimary,
+                fontSize: 20,
+                fontFamily: 'Amiri', // Ensure you have the font asset added in pubspec.yaml
+              ),
               textAlign: TextAlign.center,
               textDirection: TextDirection.rtl,
             ),

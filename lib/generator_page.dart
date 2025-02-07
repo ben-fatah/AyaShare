@@ -35,11 +35,13 @@ var theme = Theme.of(context);
       builder: (context, constraints) {
         return Scaffold(
           appBar: AppBar(
-            centerTitle: true,
+            shadowColor: theme.colorScheme.primary,
+            backgroundColor: theme.colorScheme.secondaryContainer,
             title: Text('AyaShare',style:  TextStyle( fontFamily: 'Amiri',color:  theme.colorScheme.primary,fontWeight: FontWeight.bold,fontSize: 24,),
           ),),
+          backgroundColor: Colors.amber,
           body: Row(
-          
+        
             children: [
               // جزء التنقل الجانبي
               SafeArea(
