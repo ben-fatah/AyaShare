@@ -1,0 +1,31 @@
+// كتلة buildscript: تحتوي على إعدادات البناء الخاصة بالـ Gradle
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // تأكد أن تعريف الـ classpath موجود داخل هذه الكتلة
+        classpath "com.android.tools.build:gradle:8.2.2" // يمكنك تغيير الإصدار إلى 8.2.2 أو الإصدار المطلوب
+    }
+}
+
+// باقي إعدادات المشروع:
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
